@@ -3,17 +3,17 @@ UPDATE Material
 SET titulo = 'Algoritmos e Pensamento Computacional'
 WHERE cod_material = 101;
 
--- Atualizar a relev‚ncia de um material
+-- Atualizar a relev√¢ncia de um material
 UPDATE Classifica
-SET relevancia = 'MÈdia'
+SET relevancia = 'M√©dia'
 WHERE cod_material = 103;
 
--- Atualizar a descriÁ„o de uma categoria
+-- Atualizar a descri√ß√£o de uma categoria
 UPDATE Categoria
-SET descricao = 'Tecnologia da InformaÁ„o'
+SET descricao = 'Tecnologia da Informa√ß√£o'
 WHERE cod_categoria = 1;
 
--- Excluir a classificaÁ„o que usa a categoria 3
+-- Excluir a classifica√ß√£o que usa a categoria 3
 DELETE FROM Classifica
 WHERE cod_categoria = 3;
 
@@ -21,13 +21,15 @@ WHERE cod_categoria = 3;
 DELETE FROM Categoria
 WHERE cod_categoria = 3;
 
--- Excluir a classificaÁ„o que usa o material 103 (Midia_Digital)
+-- Excluir a classifica√ß√£o que usa o material 103 (Midia_Digital)
 DELETE FROM Classifica
 WHERE cod_material = 103;
 
 -- Agora sim: excluir o material do tipo 'Midia_Digital'
 DELETE FROM Material
 WHERE tipo_material = 'Midia_Digital';
+
+-- Conferindo resultados
 SELECT * FROM Material;
 SELECT * FROM Categoria;
 SELECT * FROM Classifica;
