@@ -27,6 +27,11 @@ O projeto foi construído com base em um mini‑mundo acadêmico, contemplando u
 4. Execute **04_update_delete.sql** para manipular os dados (atualizações e exclusões).  
 
 ---
+📦 **Arquivo experienciapratica-4.zip**
+
+Este arquivo foi incluído durante a organização inicial do projeto, mas **não é necessário para execução**.  
+Todos os scripts estão disponíveis separadamente nos arquivos `.sql` acima e podem ser executados diretamente no MySQL Workbench.
+
 
 ## 👩‍💻 Autora
 
