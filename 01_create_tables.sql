@@ -1,5 +1,5 @@
+-- Criar banco de dados
 CREATE DATABASE AlfaDigital;
-
 USE AlfaDigital;
 
 -- Tabela de usuários
@@ -147,4 +147,3 @@ CREATE TABLE Classifica (
     FOREIGN KEY (cod_categoria) REFERENCES Categoria(cod_categoria),
     FOREIGN KEY (cod_material) REFERENCES Material(cod_material)
 );
-
