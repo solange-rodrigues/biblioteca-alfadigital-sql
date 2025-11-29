@@ -1,9 +1,8 @@
 CREATE DATABASE AlfaDigital;
-GO
-USE AlfaDigital;
-GO
 
--- Tabela de usuários
+USE AlfaDigital;
+
+-- Tabela de usuÃ¡rios
 CREATE TABLE Usuario (
     cod_usuario INT PRIMARY KEY,
     nome VARCHAR(100),
@@ -27,7 +26,7 @@ CREATE TABLE Professor (
     FOREIGN KEY (cod_usuario) REFERENCES Usuario(cod_usuario)
 );
 
--- Tabela de funcionários
+-- Tabela de funcionÃ¡rios
 CREATE TABLE Funcionario (
     cod_usuario INT PRIMARY KEY,
     codigo_funcionario VARCHAR(10),
@@ -51,7 +50,7 @@ CREATE TABLE Livro (
     FOREIGN KEY (cod_material) REFERENCES Material(cod_material)
 );
 
--- Tabela de periódicos
+-- Tabela de periÃ³dicos
 CREATE TABLE Periodico (
     cod_material INT PRIMARY KEY,
     issn VARCHAR(20),
@@ -59,14 +58,14 @@ CREATE TABLE Periodico (
     FOREIGN KEY (cod_material) REFERENCES Material(cod_material)
 );
 
--- Tabela de mídias digitais
+-- Tabela de mÃ­dias digitais
 CREATE TABLE Midia_Digital (
     cod_material INT PRIMARY KEY,
     formato VARCHAR(50),
     FOREIGN KEY (cod_material) REFERENCES Material(cod_material)
 );
 
--- Tabela de empréstimos
+-- Tabela de emprÃ©stimos
 CREATE TABLE Emprestimo (
     cod_emprestimo INT PRIMARY KEY,
     cod_usuario INT,
@@ -77,7 +76,7 @@ CREATE TABLE Emprestimo (
     FOREIGN KEY (cod_material) REFERENCES Material(cod_material)
 );
 
--- Tabela de renovações
+-- Tabela de renovaÃ§Ãµes
 CREATE TABLE Renovacao (
     cod_renovacao INT PRIMARY KEY,
     cod_emprestimo INT,
@@ -122,7 +121,7 @@ CREATE TABLE Editora (
     nome VARCHAR(100)
 );
 
--- Tabela de publicações
+-- Tabela de publicaÃ§Ãµes
 CREATE TABLE Publica (
     cod_editora INT,
     cod_material INT,
@@ -139,7 +138,7 @@ CREATE TABLE Categoria (
     descricao VARCHAR(100)
 );
 
--- Tabela de classificação
+-- Tabela de classificaÃ§Ã£o
 CREATE TABLE Classifica (
     cod_categoria INT,
     cod_material INT,
@@ -148,3 +147,4 @@ CREATE TABLE Classifica (
     FOREIGN KEY (cod_categoria) REFERENCES Categoria(cod_categoria),
     FOREIGN KEY (cod_material) REFERENCES Material(cod_material)
 );
+
