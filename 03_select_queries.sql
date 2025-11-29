@@ -4,26 +4,27 @@ SELECT * FROM Material;
 -- Ver todas as categorias cadastradas
 SELECT * FROM Categoria;
 
--- Ver todas as classificaÁıes existentes
+-- Ver todas as classifica√ß√µes existentes
 SELECT * FROM Classifica;
 
--- Ver os materiais classificados como 'Alta' relev‚ncia
+-- Ver os materiais classificados como 'Alta' relev√¢ncia
 SELECT M.titulo, C.relevancia
 FROM Material M
 JOIN Classifica C ON M.cod_material = C.cod_material
 WHERE C.relevancia = 'Alta';
 
--- Ver os materiais publicados apÛs 2021
+-- Ver os materiais publicados ap√≥s 2021
 SELECT titulo, ano_pub
 FROM Material
 WHERE ano_pub > 2021;
 
--- Ver os 2 materiais mais recentes
-SELECT TOP 2 titulo, ano_pub
+-- Ver os 2 materiais mais recentes (MySQL usa LIMIT)
+SELECT titulo, ano_pub
 FROM Material
-ORDER BY ano_pub DESC;
+ORDER BY ano_pub DESC
+LIMIT 2;
 
--- Ver os materiais e suas categorias (somente se houver relaÁ„o v·lida)
+-- Ver os materiais e suas categorias (somente se houver rela√ß√£o v√°lida)
 SELECT M.titulo, Cat.descricao
 FROM Material M
 JOIN Classifica C ON M.cod_material = C.cod_material
@@ -33,3 +34,4 @@ JOIN Categoria Cat ON C.cod_categoria = Cat.cod_categoria;
 SELECT tipo_material, COUNT(*) AS total
 FROM Material
 GROUP BY tipo_material;
+
